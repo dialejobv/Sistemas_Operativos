@@ -1,33 +1,16 @@
 {
   "dashboard": {
-    "title": "Ciberseguridad Básica",
+    "title": "Ciberseguridad - Demo Inline",
     "panels": [
       {
-        "type": "stat",
-        "title": "Eventos Críticos",
-        "datasource": "CSV",
-        "targets": [{
-          "query": "SELECT count(*) as value FROM cyber_data WHERE severity='Critical'"
-        }],
-        "fieldConfig": { "defaults": { "color": { "mode": "thresholds" }, "thresholds": { "mode": "absolute", "steps": [{ "value": 0, "color": "green" }, { "value": 1, "color": "red" }] } } }
-      },
-      {
-        "type": "barchart",
-        "title": "Tipos de Eventos",
-        "datasource": "CSV",
-        "targets": [{
-          "query": "SELECT event_type, count(*) as count FROM cyber_data GROUP BY event_type"
-        }]
-      },
-      {
         "type": "table",
-        "title": "Últimos Eventos",
-        "datasource": "CSV",
+        "title": "Eventos recientes",
+        "datasource": "-- Dashboard --",
         "targets": [{
-          "query": "SELECT timestamp, source_ip, destination_ip, event_type, severity FROM cyber_data ORDER BY timestamp DESC LIMIT 10"
+          "datasource": { "type": "marcusolsson-csv-datasource", "uid": "csv" },
+          "csv": "timestamp,event\n2024-01-01T10:00:00Z,Brute Force\n2024-01-01T10:05:00Z,Malware"
         }]
       }
-    ],
-    "refresh": "10s"
+    ]
   }
 }
