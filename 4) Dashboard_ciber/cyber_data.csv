@@ -1,0 +1,6 @@
+timestamp,source_ip,destination_ip,event_type,severity
+2024-01-01T10:00:00Z,192.168.1.10,10.0.0.5,Brute Force Attempt,High
+2024-01-01T10:05:00Z,10.200.45.3,192.168.1.15,Malware Detected,Critical
+2024-01-01T10:10:00Z,172.16.0.2,10.0.0.8,Port Scanning,Medium
+2024-01-01T10:15:00Z,192.168.1.20,10.0.0.5,SQL Injection,High
+2024-01-01T10:20:00Z,10.200.45.7,192.168.1.10,Phishing Attempt,Medium
